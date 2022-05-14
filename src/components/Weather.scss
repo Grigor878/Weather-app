@@ -1,0 +1,105 @@
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-direction: column;
+  background-image: url("../assets/back.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  min-height: 800px;
+  padding: 70px 0;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    label {
+      font-size: 22px;
+      margin-bottom: 7px;
+      color: white;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    input {
+      padding: 7px 11px;
+      margin-bottom: 22px;
+      border: 1px solid #00bfff;
+      border-radius: 3px;
+      background-color: rgba(255, 255, 255, 1);
+      color: #00bfff;
+      transition: all 0.7s ease;
+      outline: none;
+
+      &:focus {
+        -webkit-box-shadow: 0px 0px 10px 1px rgb(255, 255, 255);
+        box-shadow: 0px 0px 10px 1px rgb(255, 255, 255);
+      }
+    }
+
+    button {
+      cursor: pointer;
+      border: 1px solid transparent;
+      border-radius: 3px;
+      background-color: #00bfff;
+      color: white;
+      padding: 5px 11px;
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: all 0.7s ease;
+
+      &:hover {
+        color: #00bfff;
+        background-color: white;
+        border: 1px solid #00bfff;
+      }
+    }
+  }
+
+  &__result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 100px;
+  }
+
+  &__indicators {
+    display: flex;
+    align-items: center;
+    background-color: #00bfff;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 20px 5px rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px 5px rgb(255, 255, 255);
+    padding: 7px;
+    margin-bottom: 22px;
+
+    &:not(:last-child) {
+      margin-right: 22px;
+    }
+
+    p {
+      color: white;
+      font-size: 25px;
+    }
+  }
+
+  &__icons {
+    color: white;
+    font-size: 22px;
+    margin-right: 11px;
+  }
+
+  &__update {
+    background-color: white;
+    color: #00bfff;
+    font-size: 22px;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #00bfff;
+  }
+}
