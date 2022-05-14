@@ -50,9 +50,9 @@ function Weather() {
     <main className='main'>
       <form className='main__form' onSubmit={getWeather}>
         <label>Enter latitude</label>
-        <input type="text" name='lat' value={lat} onChange={e => setLat(e.target.value)} />
+        <input type="number" required name='lat' value={lat} onChange={e => setLat(e.target.value)} />
         <label>Enter longitude</label>
-        <input type="text" name='lon' value={lon} onChange={e => setLon(e.target.value)} />
+        <input type="number" required name='lon' value={lon} onChange={e => setLon(e.target.value)} />
         <button>Search</button>
       </form>
 
