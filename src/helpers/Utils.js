@@ -17,5 +17,3 @@ export function update() {
     let datetime = currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
     return datetime
 }
-
-

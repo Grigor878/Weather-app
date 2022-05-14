@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import axios from 'axios'
 import './Weather.scss'
-import { timeConverter, kToC, update } from './Convertors';
+import { timeConverter, kToC, update } from '../helpers/Utils';
 import { CgTime, CgRename } from 'react-icons/cg';
 import { AiOutlineColumnWidth, AiOutlineColumnHeight } from 'react-icons/ai';
 import { BsThermometerSun } from 'react-icons/bs';
@@ -19,7 +19,7 @@ function Weather() {
     const API = 'https://api.openweathermap.org/data/2.5/weather?';
     const API_KEY = 'bf65d8b174418831a16055a19f50144f';
     try {
-      const response = await axios.get(`${API}lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+      const response = await axios.get(`${API}lat=${lat}&lon=${lon}&appid=${API_KEY}`);
       setData([response.data]);
       console.log(response.data);
     } catch (err) {
@@ -35,9 +35,9 @@ function Weather() {
     return () => clearInterval(interval)
   }, [fetchWeather])
 
-  const getWeather = async (e) => {
+  const getWeather = (e) => {
     e.preventDefault();
-    await fetchWeather();
+    fetchWeather();
     // setLat('');
     // setLon('');
   }
@@ -50,9 +50,9 @@ function Weather() {
     <main className='main'>
       <form className='main__form' onSubmit={getWeather}>
         <label>Enter latitude</label>
-        <input type="text" name='lat' value={lat} onChange={e => setLat(e.target.value)} />
+        <input type="number" required name='lat' value={lat} onChange={e => setLat(e.target.value)} />
         <label>Enter longitude</label>
-        <input type="text" name='lon' value={lon} onChange={e => setLon(e.target.value)} />
+        <input type="number" required name='lon' value={lon} onChange={e => setLon(e.target.value)} />
         <button>Search</button>
       </form>
 
